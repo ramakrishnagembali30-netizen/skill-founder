@@ -1,0 +1,69 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Finder</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #eaf2ff;
+            padding: 30px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: auto;
+        }
+        input, button {
+            padding: 12px;
+            margin: 10px;
+            border-radius: 6px;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Skill Finder</h1>
+        <h2>Discover Your Career Skills</h2>
+
+        <p>Enter your interested career:</p>
+
+        <input id="career" placeholder="e.g. Web Developer">
+
+        <button onclick="findSkills()">Find Skills</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function findSkills() {
+            let career = document.getElementById("career").value;
+            let result = document.getElementById("result");
+
+            if (career.trim() === "") {
+                result.innerHTML = "Please enter a career!";
+                return;
+            }
+
+            result.innerHTML = `
+                <h3>Skills to Learn for ${career}</h3>
+                <p>1. HTML</p>
+                <p>2. CSS</p>
+                <p>3. JavaScript</p>
+                <h3>Free Learning Websites</h3>
+                <p><a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a></p>
+                <p><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></p>
+            `;
+        }
+    </script>
+</body>
+</html>
